@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
 
 const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 3,
-    hours: 12,
-    minutes: 30,
-    seconds: 0,
-  });
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('December 15, 2024 00:00:00');
+    const now = new Date();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return { days, hours, minutes, seconds };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        const { days, hours, minutes, seconds } = prev;
-        if (seconds > 0) {
-          return { ...prev, seconds: seconds - 1 };
-        } else if (minutes > 0) {
-          return { ...prev, minutes: minutes - 1, seconds: 59 };
-        } else if (hours > 0) {
-          return { ...prev, hours: hours - 1, minutes: 59, seconds: 59 };
-        } else if (days > 0) {
-          return { ...prev, days: days - 1, hours: 23, minutes: 59, seconds: 59 };
-        } else {
-          clearInterval(timer);
-          return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-        }
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
+
     return () => clearInterval(timer);
   }, []);
+
 
   return (
     <div className="flex flex-col items-center gap-4 text-white md:absolute md:top-8 md:right-8 backdrop-blur-lg rounded-xl p-4 md:p-6 border-white/10">

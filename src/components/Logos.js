@@ -6,7 +6,7 @@ const LogosDiv = () => {
       <img
         src="./images/yrf.png"
         alt="YRF Logo"
-        className="h-16 md:h-24 lg:h-35 mt-6 md:mt-10"
+        className="h-16 md:h-24 lg:h-35"
       />
       <img
         src="./images/oxus2.png"
