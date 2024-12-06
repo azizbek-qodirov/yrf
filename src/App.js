@@ -1,3 +1,4 @@
+// App.js
 import { ArrowLeftCircle, ArrowRightCircle } from 'lucide-react';
 import React, { useCallback, useEffect, useState } from 'react';
 import HeaderDiv from './components/Header';
@@ -28,40 +29,45 @@ const App = () => {
   }, [isPaused, nextSlide]);
 
   return (
-    <div className="h-screen w-full bg-gray-900 Main-bg flex flex-col overflow-hidden" style={{
-      background: "linear-gradient(130deg, #1A1125 0%, #2B1B3B 50%, #1A1125 100%)",
-    }}>
+    <div 
+      className="min-h-screen w-full bg-gray-900 Main-bg flex flex-col overflow-x-hidden" 
+      style={{
+        background: "linear-gradient(130deg, #1A1125 0%, #2B1B3B 50%, #1A1125 100%)",
+      }}
+    >
       {/* Header - Full Width */}
       <div className="flex-none">
         <HeaderDiv />
       </div>
+
       {/* Content Container */}
-      <div className="flex-1 flex items-center"> 
+      <div className="flex-1 flex items-center py-8 px-4 md:px-6 lg:px-8">
         {isRegistrationVisible ? (
           <RegistrationForm onBack={() => setIsRegistrationVisible(false)} />
         ) : (
-          <div className="flex flex-col lg:flex-row items-center w-full">
+          <div className="flex flex-col lg:flex-row items-center w-full gap-8 lg:gap-0">
             {/* Left Section */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center items-start lg:items-center px-8 lg:px-0 text-left gap-10">
-              <LeftSection 
-                setIsModalOpen={setIsModalOpen} 
-                setIsRegistrationVisible={setIsRegistrationVisible} 
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start px-4 lg:px-0 text-center lg:text-left gap-6 lg:gap-10">
+              <LeftSection
+                setIsModalOpen={setIsModalOpen}
+                setIsRegistrationVisible={setIsRegistrationVisible}
               />
             </div>
+
             {/* Right Section - Slideshow */}
-            <div className="w-full lg:w-[48%] relative flex flex-col items-center justify-center">
-              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-20">
+            <div className="w-full lg:w-[48%] relative flex flex-col items-center justify-center mt-8 lg:mt-10">
+              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-2 lg:px-4 z-20">
                 <button
                   onClick={prevSlide}
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  <ArrowLeftCircle size={40} />
+                  <ArrowLeftCircle size={32} />
                 </button>
                 <button
                   onClick={nextSlide}
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  <ArrowRightCircle size={40} />
+                  <ArrowRightCircle size={32} />
                 </button>
               </div>
               {/* Slides Container */}

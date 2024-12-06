@@ -36,11 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Main-bg {
-  background: 'linear-gradient(130deg, #1A1125 0%, #2B1B3B 50%, #1A1125 100%)';
-  background-repeat: 'no-repeat';
-  background-attachment: 'fixed';
-  background-size: 'cover';
-  color: '#fff';
-}

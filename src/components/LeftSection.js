@@ -6,7 +6,7 @@ const LeftSection = ({ setIsModalOpen, setIsRegistrationVisible }) => {
   
   const LeftSectionDiv = ({ setIsModalOpen, setIsRegistrationVisible }) => {
     return (
-      <div className="max-w-xl">
+      <div className="max-w-xl ml-0 md:ml-20">
         {/* Text Section */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#00ffff] pb-8">
           Young Researchers of the Future
