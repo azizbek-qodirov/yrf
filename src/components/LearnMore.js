@@ -14,16 +14,16 @@ const LearnMoreModal = ({ isOpen, onClose }) => {
                 >
                     <CircleX size={24} />
                 </button>
-                <h3 className="text-2xl font-bold text-white mb-4">About the Program</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Loyiha haqida</h3>
                 <div className="text-gray-300 space-y-4">
                     <p>
-                        The "Young Researchers of the Future" program is designed to nurture the next generation of scientific minds. Our comprehensive research initiative provides students with hands-on experience in conducting meaningful research in economics and geography, developing critical thinking skills, and solving real-world problems.
+                        “Young Researchers of the Future” dasturi ilmiy tafakkurning keyingi avlodini tarbiyalashga qaratilgan. Bizning keng qamrovli tadqiqot o'quvchilarga iqtisod va geografiya bo'yicha mazmunli tadqiqotlar o'tkazish, tanqidiy fikrlash qobiliyatlarini rivojlantirish va real muammolarni hal qilishda amaliy tajriba bilan ta'minlaydi.
                     </p>
                     <p>
-                        Participants will have access to expert mentorship, state-of-the-art resources, and a supportive community of fellow young researchers. The program emphasizes both individual growth and collaborative learning, ensuring that each student develops their unique research interests while building valuable teamwork skills.
+                        Ishtirokchilar ekspert maslahatidan, eng zamonaviy manbalardan va yosh tadqiqotchilarni qo‘llab-quvvatlovchi hamjamiyatidan foydalanish imkoniyatiga ega bo‘ladilar. Dastur individual o'sishga va hamkorlikda o'rganishga urg'u beradi, bu har bir talaba o'zining noyob tadqiqot qiziqishlarini rivojlantirishni ta'minlaydi, shu bilan birga qimmatli jamoada ishlash ko'nikmalarini shakllantiradi.
                     </p>
                     <p>
-                        Throughout the program, students will learn essential research methodologies, data analysis techniques, and presentation skills. The culmination of their work will be showcased at our final presentation event, where they'll have the opportunity to share their findings with peers, educators, and industry experts.
+                        Dastur davomida talabalar muhim tadqiqot metodologiyalari, ma'lumotlarni tahlil qilish usullari va taqdimot ko'nikmalarini o'rganadilar. Ularning ishining yakuni yakuniy taqdimot tadbirimizda namoyish etiladi, u yerda ular o‘z topilmalarini tengdoshlari, o‘qituvchilari va soha mutaxassislari bilan baham ko‘rish imkoniyatiga ega bo‘ladilar.
                     </p>
                 </div>
             </div>

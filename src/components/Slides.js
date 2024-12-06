@@ -2,43 +2,43 @@ import React from 'react';
 
 const slides = [
   {
-    title: "Important Dates",
+    title: "Muhim sanalar",
     icon: "📅",
-    price: "Dec 10",
+    price: "11-dekabr",
     details: [
-      { label: "Registration", value: "Dec 10" },
-      { label: "Research Period", value: "7 days" },
-      { label: "Final Presentation", value: "Dec 18" },
+      { label: "Oxirgi muddat", value: "16-dekabr" },
+      { label: "Tadqiqot davomiyligi", value: "6 kun" },
+      { label: "Taqdimot sanasi", value: "21-dekabr" },
     ],
   },
   {
-    title: "Awards",
+    title: "Mukofotlar",
     icon: "🏆",
-    price: "500k",
+    price: "500,000 UZS",
     details: [
-      { label: "First Place", value: "500,000 UZS" },
-      { label: "Second Place", value: "300,000 UZS" },
-      { label: "Third Place", value: "200,000 UZS" },
+      { label: "Birinchi o'rin", value: "500,000 UZS" },
+      { label: "Ikkinchi o'rin", value: "300,000 UZS" },
+      { label: "Uchinchi o'rin", value: "200,000 UZS" },
     ],
   },
   {
-    title: "Eligibility",
+    title: "Talablar",
     icon: "👥",
-    price: "7-11",
+    price: "4-6",
     details: [
-      { label: "Grade Level", value: "7-11" },
-      { label: "Location", value: "School No. 5" },
-      { label: "Certificate", value: "Included" },
+      { label: "Yosh chegarasi", value: "14-19" },
+      { label: "Guruh a'zolari", value: "4-6 kishi" },
+      { label: "Manzil", value: "5-maktab" },
     ],
   },
   {
-    title: "Benefits",
+    title: "Imtiyozlar",
     icon: "🎁",
-    price: "Free",
+    price: "Bepul",
     details: [
-      { label: "Refreshments", value: "Provided" },
-      { label: "Networking", value: "Industry Experts" },
-      { label: "Extras", value: "Special Gifts" },
+      { label: "Coffe break", value: "Mavjud" },
+      { label: "Networking", value: "Masterklass" },
+      { label: "Boshqa", value: "Sertifikat va sovg'alar" },
     ],
   },
 ];

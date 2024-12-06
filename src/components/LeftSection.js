@@ -21,13 +21,13 @@ const LeftSection = ({ setIsModalOpen, setIsRegistrationVisible }) => {
             onClick={() => setIsRegistrationVisible(true)}
             className="bg-[#00ffff] text-gray-900 px-6 py-2 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-[#00ffff]/90 transition-colors"
           >
-            Register Now
+            Ro'yxatdan o'tish
           </button>
           <button
             onClick={() => setIsModalOpen(true)}
             className="border border-[#00ffff] text-[#00ffff] px-6 py-2 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-[#00ffff]/10 transition-colors"
           >
-            Learn More
+            Batafsil
           </button>
         </div>
       </div>
