@@ -5,14 +5,12 @@ import LearnMoreModal from './components/LearnMore';
 import LeftSection from './components/LeftSection';
 import RegistrationForm from './components/RegistrationForm';
 import { slides, SlidesDiv } from './components/Slides';
-import { NotificationToast } from './components/Notification';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isRegistrationVisible, setIsRegistrationVisible] = useState(false);
-  const [notification, setNotification] = useState(null);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -29,15 +27,6 @@ const App = () => {
     }
   }, [isPaused, nextSlide]);
 
-  const handleRegistrationClick = () => {
-    // Show notification instead of registration form
-    setNotification({
-      message: "Ro'yxatga olish hali boshlanmagan!",
-      type: "info",
-      duration: 3000
-    });
-  };
-
   return (
     <div
       className="min-h-screen w-full bg-gray-900 Main-bg flex flex-col overflow-x-hidden"
@@ -45,15 +34,6 @@ const App = () => {
         background: "linear-gradient(130deg, #1A1125 0%, #2B1B3B 50%, #1A1125 100%)",
       }}
     >
-      {notification && (
-        <NotificationToast
-          message={notification.message}
-          type={notification.type}
-          duration={notification.duration}
-          onClose={() => setNotification(null)}
-        />
-      )}
-
       {/* Header - Full Width */}
       <div className="flex-none">
         <HeaderDiv />
@@ -69,7 +49,7 @@ const App = () => {
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start px-4 lg:px-0 text-center lg:text-left gap-6 lg:gap-10">
               <LeftSection
                 setIsModalOpen={setIsModalOpen}
-                onRegisterClick={handleRegistrationClick}
+                setIsRegistrationVisible={setIsRegistrationVisible}
               />
             </div>
 

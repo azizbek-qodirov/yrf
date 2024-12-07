@@ -1,6 +1,11 @@
-import React from 'react';
 
-const LeftSection = ({ setIsModalOpen, onRegisterClick }) => {
+const LeftSection = ({ setIsModalOpen, setIsRegistrationVisible }) => {
+  return (
+    <LeftSectionDiv setIsModalOpen={setIsModalOpen} setIsRegistrationVisible={setIsRegistrationVisible} />
+  );
+};
+
+const LeftSectionDiv = ({ setIsModalOpen, setIsRegistrationVisible }) => {
   return (
     <div className="max-w-xl ml-0 md:ml-20 mb-0 md:mb-10">
       {/* Text Section */}
@@ -10,10 +15,11 @@ const LeftSection = ({ setIsModalOpen, onRegisterClick }) => {
       <p className="text-gray-300 text-base md:text-lg lg:text-xl pb-8">
         O'z kelajagingizga befarq bo'lmaganingizdan biz xursandmiz, bu loyiha aynan siz uchun.
       </p>
+
       {/* Buttons */}
       <div className="flex gap-4 mt-4 lg:mt-6 justify-start lg:justify-left">
         <button
-          onClick={onRegisterClick}
+          onClick={() => setIsRegistrationVisible(true)}
           className="bg-[#00ffff] text-gray-900 px-6 py-2 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-[#00ffff]/90 transition-colors"
         >
           Ro'yxatdan o'tish
