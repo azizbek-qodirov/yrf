@@ -7,15 +7,15 @@ const CountdownTimer = () => {
     const difference = targetDate - now;
 
     if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return { kun: 0, soat: 0, daqiqa: 0, sekund: 0 };
     }
 
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((difference / (1000 * 60)) % 60);
-    const seconds = Math.floor((difference / 1000) % 60);
+    const kun = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const soat = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const daqiqa = Math.floor((difference / (1000 * 60)) % 60);
+    const sekund = Math.floor((difference / 1000) % 60);
 
-    return { days, hours, minutes, seconds };
+    return { kun: kun, soat: soat, daqiqa: daqiqa, sekund: sekund };
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -35,7 +35,7 @@ const CountdownTimer = () => {
         Ro'yxatdan o'tish<br/> boshlanishigacha qolgan vaqt:
       </h2>
       <div className="flex gap-1 md:gap-2 text-center items-center">
-        {['days', 'hours', 'minutes', 'seconds'].map((unit, index, arr) => (
+        {['kun', 'soat', 'daqiqa', 'sekund'].map((unit, index, arr) => (
           <React.Fragment key={index}>
             <div className="flex flex-col">
               <div 
