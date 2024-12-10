@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NotificationToast } from './Notification';
 
 const RegistrationForm = ({ onBack }) => {
-  const ageOptions = Array.from({ length: 6 }, (_, i) => 14 + i);
+  const ageOptions = Array.from({ length: 8 }, (_, i) => 12 + i);
   const memberOptions = Array.from({ length: 3 }, (_, i) => i + 4);
 
   const [formData, setFormData] = useState({
@@ -78,7 +78,7 @@ const RegistrationForm = ({ onBack }) => {
       formData.numberOfMembers = parseInt(formData.numberOfMembers);
       formData.age = parseInt(formData.age);
       try {
-        const response = await fetch('http://localhost:8088/user', {
+        const response = await fetch('https://70e1-94-158-57-106.ngrok-free.app/user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const RegistrationForm = ({ onBack }) => {
 
         if (response.ok) {
           setNotification({
-            message: 'Sent successfully!',
+            message: "Ma'lumotlar muvaffaqiyatli yuborildi!",
             type: 'success',
           });
           setTimeout(() => {
@@ -97,7 +97,7 @@ const RegistrationForm = ({ onBack }) => {
           }, 3000); // Notification stays for 3 seconds
         } else {
           setNotification({
-            message: 'Registration failed. Please check your input and try again.',
+            message: "Ma'lumotlar yuborilmadi. Iltimos qayta urinib ko'ring!",
             type: 'error',
           });
           setTimeout(() => {
@@ -106,7 +106,7 @@ const RegistrationForm = ({ onBack }) => {
         }
       } catch (error) {
         setNotification({
-          message: 'Network Error. Please try again later!',
+          message: "Ma'lumotlar yuborilmadi. Iltimos qayta urinib ko'ring!",
           type: 'error',
         });
         setTimeout(() => {
@@ -129,15 +129,15 @@ const RegistrationForm = ({ onBack }) => {
       )}
 
       <div className="w-full max-w-4xl bg-white/5 backdrop-blur-lg rounded-2xl p-4 lg:p-8 shadow-2xl border border-cyan-400/20">
-        <h1 className="text-3xl font-bold text-blue-600 mb-8 text-center">Register</h1>
+        <h1 className="text-3xl font-bold text-blue-600 mb-8 text-center">Ro'yxatdan o'tish</h1>
         <form className="w-full space-y-4" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="block text-gray-200">Name of Group</label>
+              <label className="block text-gray-200">Guruh nomi</label>
               <input
                 type="text"
                 name="groupName"
-                placeholder="Enter the group name"
+                placeholder="Guruh nomini kiriting"
                 value={formData.groupName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700"
@@ -146,14 +146,14 @@ const RegistrationForm = ({ onBack }) => {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-gray-200">Number of Members</label>
+              <label className="block text-gray-200">Guruh a'zolari soni</label>
               <select
                 name="numberOfMembers"
                 value={formData.numberOfMembers}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700"
               >
-                <option value="" disabled>Select number of members</option>
+                <option value="" disabled>A'zolar sonini tanlang</option>
                 {memberOptions.map((num) => (
                   <option key={num} value={num} style={{ backgroundColor: '#1D2432' }}>{num}</option>
                 ))}
@@ -164,11 +164,11 @@ const RegistrationForm = ({ onBack }) => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="block text-gray-200">First Name</label>
+              <label className="block text-gray-200">Ism</label>
               <input
                 type="text"
                 name="firstName"
-                placeholder="Enter your first name"
+                placeholder="Guruh liderining ismini kiriting"
                 value={formData.firstName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700"
@@ -177,11 +177,11 @@ const RegistrationForm = ({ onBack }) => {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-gray-200">Last Name</label>
+              <label className="block text-gray-200">Familya</label>
               <input
                 type="text"
                 name="lastName"
-                placeholder="Enter your last name"
+                placeholder="Guruh liderining familyasini kiriting"
                 value={formData.lastName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700"
@@ -192,14 +192,14 @@ const RegistrationForm = ({ onBack }) => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="block text-gray-200">Age</label>
+              <label className="block text-gray-200">Yosh</label>
               <select
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700"
               >
-                <option value="" disabled>Select your age</option>
+                <option value="" disabled>Yoshingizni tanlang</option>
                 {ageOptions.map((age) => (
                   <option key={age} value={age} style={{ backgroundColor: '#1D2432' }}>{age}</option>
                 ))}
@@ -208,7 +208,7 @@ const RegistrationForm = ({ onBack }) => {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-gray-200">Phone Number</label>
+              <label className="block text-gray-200">Telefon raqam</label>
               <input
                 type="tel"
                 name="phoneNumber"
@@ -240,13 +240,13 @@ const RegistrationForm = ({ onBack }) => {
               onClick={onBack}
               className="px-6 py-3 rounded-lg bg-gray-800/50 text-white border border-gray-700 hover:bg-gray-600 transition duration-300"
             >
-              Back
+              Orqaga
             </button>
             <button
               type="submit"
               className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition duration-300"
             >
-              Register
+              Yuborish
             </button>
           </div>
         </form>

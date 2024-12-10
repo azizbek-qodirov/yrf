@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date('December 11, 2024 00:00:00');
+    const targetDate = new Date('December 15, 2024 00:00:00');
     const now = new Date();
     const difference = targetDate - now;
 
@@ -32,7 +32,7 @@ const CountdownTimer = () => {
   return (
     <div className="flex flex-col items-center gap-4 text-white md:absolute md:top-8 md:right-8 backdrop-blur-lg rounded-xl p-4 md:p-6 border-white/10">
       <h2 className="text-center md:text-lg font-semibold text-white tracking-wider">
-        Ro'yxatdan o'tish<br/> boshlanishigacha qolgan vaqt:
+        Ro'yxatdan o'tish<br/> yakunlanishigacha qolgan vaqt:
       </h2>
       <div className="flex gap-1 md:gap-2 text-center items-center">
         {['kun', 'soat', 'daqiqa', 'sekund'].map((unit, index, arr) => (

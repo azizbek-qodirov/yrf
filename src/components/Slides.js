@@ -6,9 +6,9 @@ const slides = [
     icon: "📅",
     price: "11-dekabr",
     details: [
-      { label: "Oxirgi muddat", value: "16-dekabr" },
-      { label: "Tadqiqot davomiyligi", value: "6 kun" },
-      { label: "Taqdimot sanasi", value: "21-dekabr" },
+      { label: "Oxirgi muddat", value: "15-dekabr" },
+      { label: "Tadqiqot davomiyligi", value: "7 kun" },
+      { label: "Taqdimot sanasi", value: "22-dekabr" },
     ],
   },
   {
@@ -26,7 +26,7 @@ const slides = [
     icon: "👥",
     price: "4-6",
     details: [
-      { label: "Yosh chegarasi", value: "14-19" },
+      { label: "Yosh chegarasi", value: "12-19" },
       { label: "Guruh a'zolari", value: "4-6 kishi" },
       { label: "Manzil", value: "5-maktab" },
     ],
