@@ -52,7 +52,7 @@ const RegistrationForm = ({ onBack }) => {
     }
 
     // Phone Number Validation
-    const phoneRegex = /^\+998(20|33|50|88|90|91|93|94|95|97|99)\d{7}$/;
+    const phoneRegex = /^\+998(20|33|50|77|88|90|91|93|94|95|97|99)\d{7}$/;
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = 'Phone number is required.';
     } else if (!phoneRegex.test(formData.phoneNumber)) {
@@ -78,7 +78,7 @@ const RegistrationForm = ({ onBack }) => {
       formData.numberOfMembers = parseInt(formData.numberOfMembers);
       formData.age = parseInt(formData.age);
       try {
-        const response = await fetch('https://70e1-94-158-57-106.ngrok-free.app/user', {
+        const response = await fetch('https://00a5-188-113-229-25.ngrok-free.app/user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
