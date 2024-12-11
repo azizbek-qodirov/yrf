@@ -78,7 +78,7 @@ const RegistrationForm = ({ onBack }) => {
       formData.numberOfMembers = parseInt(formData.numberOfMembers);
       formData.age = parseInt(formData.age);
       try {
-        const response = await fetch('http://localhost:8088/user', {
+        const response = await fetch('https:/yrf.hopto.org/user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
